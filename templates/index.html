@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Attack Type Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Predict Attack Type</h1>
+        </header>
+        <main>
+            <form method="post">
+                <!-- Duration -->
+                <div class="form-group">
+                    <label for="duration">Duration:</label>
+                    <input type="number" step="any" id="duration" name="duration" required>
+                </div>
+                <!-- Protocol Type -->
+                <div class="form-group">
+                    <label for="protocol_type">Protocol Type:</label>
+                    <input type="text" id="protocol_type" name="protocol_type" required>
+                </div>
+                <!-- Service -->
+                <div class="form-group">
+                    <label for="service">Service:</label>
+                    <input type="text" id="service" name="service" required>
+                </div>
+                <!-- Flag -->
+                <div class="form-group">
+                    <label for="flag">Flag:</label>
+                    <input type="text" id="flag" name="flag" required>
+                </div>
+                <!-- Source Bytes -->
+                <div class="form-group">
+                    <label for="src_bytes">Source Bytes:</label>
+                    <input type="number" step="any" id="src_bytes" name="src_bytes" required>
+                </div>
+                <!-- Destination Bytes -->
+                <div class="form-group">
+                    <label for="dst_bytes">Destination Bytes:</label>
+                    <input type="number" step="any" id="dst_bytes" name="dst_bytes" required>
+                </div>
+                <!-- Land -->
+                <div class="form-group">
+                    <label for="land">Land:</label>
+                    <input type="number" id="land" name="land" required>
+                </div>
+                <!-- Wrong Fragment -->
+                <div class="form-group">
+                    <label for="wrong_fragment">Wrong Fragment:</label>
+                    <input type="number" id="wrong_fragment" name="wrong_fragment" required>
+                </div>
+                <!-- Urgent -->
+                <div class="form-group">
+                    <label for="urgent">Urgent:</label>
+                    <input type="number" id="urgent" name="urgent" required>
+                </div>
+                <!-- Hot -->
+                <div class="form-group">
+                    <label for="hot">Hot:</label>
+                    <input type="number" id="hot" name="hot" required>
+                </div>
+                <!-- Number of Failed Logins -->
+                <div class="form-group">
+                    <label for="num_failed_logins">Number of Failed Logins:</label>
+                    <input type="number" id="num_failed_logins" name="num_failed_logins" required>
+                </div>
+                <!-- Logged In -->
+                <div class="form-group">
+                    <label for="logged_in">Logged In:</label>
+                    <input type="number" id="logged_in" name="logged_in" required>
+                </div>
+                <!-- Number of Compromised -->
+                <div class="form-group">
+                    <label for="num_compromised">Number of Compromised:</label>
+                    <input type="number" id="num_compromised" name="num_compromised" required>
+                </div>
+                <!-- Root Shell -->
+                <div class="form-group">
+                    <label for="root_shell">Root Shell:</label>
+                    <input type="number" id="root_shell" name="root_shell" required>
+                </div>
+                <!-- SU Attempted -->
+                <div class="form-group">
+                    <label for="su_attempted">SU Attempted:</label>
+                    <input type="number" id="su_attempted" name="su_attempted" required>
+                </div>
+                <!-- Number of Root -->
+                <div class="form-group">
+                    <label for="num_root">Number of Root:</label>
+                    <input type="number" id="num_root" name="num_root" required>
+                </div>
+                <!-- Number of File Creations -->
+                <div class="form-group">
+                    <label for="num_file_creations">Number of File Creations:</label>
+                    <input type="number" id="num_file_creations" name="num_file_creations" required>
+                </div>
+                <!-- Number of Shells -->
+                <div class="form-group">
+                    <label for="num_shells">Number of Shells:</label>
+                    <input type="number" id="num_shells" name="num_shells" required>
+                </div>
+                <!-- Number of Access Files -->
+                <div class="form-group">
+                    <label for="num_access_files">Number of Access Files:</label>
+                    <input type="number" id="num_access_files" name="num_access_files" required>
+                </div>
+                <!-- Number of Outbound Commands -->
+                <div class="form-group">
+                    <label for="num_outbound_cmds">Number of Outbound Commands:</label>
+                    <input type="number" id="num_outbound_cmds" name="num_outbound_cmds" required>
+                </div>
+                <!-- Is Host Login -->
+                <div class="form-group">
+                    <label for="is_host_login">Is Host Login:</label>
+                    <input type="number" id="is_host_login" name="is_host_login" required>
+                </div>
+                <!-- Is Guest Login -->
+                <div class="form-group">
+                    <label for="is_guest_login">Is Guest Login:</label>
+                    <input type="number" id="is_guest_login" name="is_guest_login" required>
+                </div>
+                <!-- Count -->
+                <div class="form-group">
+                    <label for="count">Count:</label>
+                    <input type="number" id="count" name="count" required>
+                </div>
+                <!-- Server Count -->
+                <div class="form-group">
+                    <label for="srv_count">Server Count:</label>
+                    <input type="number" id="srv_count" name="srv_count" required>
+                </div>
+                <!-- Serror Rate -->
+                <div class="form-group">
+                    <label for="serror_rate">Serror Rate:</label>
+                    <input type="number" step="any" id="serror_rate" name="serror_rate" required>
+                </div>
+                <!-- Server Serror Rate -->
+                <div class="form-group">
+                    <label for="srv_serror_rate">Server Serror Rate:</label>
+                    <input type="number" step="any" id="srv_serror_rate" name="srv_serror_rate" required>
+                </div>
+                <!-- Rerror Rate -->
+                <div class="form-group">
+                    <label for="rerror_rate">Rerror Rate:</label>
+                    <input type="number" step="any" id="rerror_rate" name="rerror_rate" required>
+                </div>
+                <!-- Server Rerror Rate -->
+                <div class="form-group">
+                    <label for="srv_rerror_rate">Server Rerror Rate:</label>
+                    <input type="number" step="any" id="srv_rerror_rate" name="srv_rerror_rate" required>
+                </div>
+                <!-- Same Service Rate -->
+                <div class="form-group">
+                    <label for="same_srv_rate">Same Service Rate:</label>
+                    <input type="number" step="any" id="same_srv_rate" name="same_srv_rate" required>
+                </div>
+                <!-- Different Service Rate -->
+                <div class="form-group">
+                    <label for="diff_srv_rate">Different Service Rate:</label>
+                    <input type="number" step="any" id="diff_srv_rate" name="diff_srv_rate" required>
+                </div>
+                <!-- Server Different Host Rate -->
+                <div class="form-group">
+                    <label for="srv_diff_host_rate">Server Different Host Rate:</label>
+                    <input type="number" step="any" id="srv_diff_host_rate" name="srv_diff_host_rate" required>
+                </div>
+                <!-- Destination Host Count -->
+                <div class="form-group">
+                    <label for="dst_host_count">Destination Host Count:</label>
+                    <input type="number" id="dst_host_count" name="dst_host_count" required>
+                </div>
+                <!-- Destination Host Server Count -->
+                <div class="form-group">
+                    <label for="dst_host_srv_count">Destination Host Server Count:</label>
+                    <input type="number" id="dst_host_srv_count" name="dst_host_srv_count" required>
+                </div>
+                <!-- Destination Host Same Service Rate -->
+                <div class="form-group">
+                    <label for="dst_host_same_srv_rate">Destination Host Same Service Rate:</label>
+                    <input type="number" step="any" id="dst_host_same_srv_rate" name="dst_host_same_srv_rate" required>
+                </div>
+                <!-- Destination Host Different Service Rate -->
+                <div class="form-group">
+                    <label for="dst_host_diff_srv_rate">Destination Host Different Service Rate:</label>
+                    <input type="number" step="any" id="dst_host_diff_srv_rate" name="dst_host_diff_srv_rate" required>
+                </div>
+                <!-- Destination Host Same Source Port Rate -->
+                <div class="form-group">
+                    <label for="dst_host_same_src_port_rate">Destination Host Same Source Port Rate:</label>
+                    <input type="number" step="any" id="dst_host_same_src_port_rate" name="dst_host_same_src_port_rate" required>
+                </div>
+                <!-- Destination Host Server Different Host Rate -->
+                <div class="form-group">
+                    <label for="dst_host_srv_diff_host_rate">Destination Host Server Different Host Rate:</label>
+                    <input type="number" step="any" id="dst_host_srv_diff_host_rate" name="dst_host_srv_diff_host_rate" required>
+                </div>
+                <!-- Destination Host Serror Rate -->
+                <div class="form-group">
+                    <label for="dst_host_serror_rate">Destination Host Serror Rate:</label>
+                    <input type="number" step="any" id="dst_host_serror_rate" name="dst_host_serror_rate" required>
+                </div>
+                <!-- Destination Host Server Serror Rate -->
+                <div class="form-group">
+                    <label for="dst_host_srv_serror_rate">Destination Host Server Serror Rate:</label>
+                    <input type="number" step="any" id="dst_host_srv_serror_rate" name="dst_host_srv_serror_rate" required>
+                </div>
+                <!-- Destination Host Rerror Rate -->
+                <div class="form-group">
+                    <label for="dst_host_rerror_rate">Destination Host Rerror Rate:</label>
+                    <input type="number" step="any" id="dst_host_rerror_rate" name="dst_host_rerror_rate" required>
+                </div>
+                <!-- Destination Host Server Rerror Rate -->
+                <div class="form-group">
+                    <label for="dst_host_srv_rerror_rate">Destination Host Server Rerror Rate:</label>
+                    <input type="number" step="any" id="dst_host_srv_rerror_rate" name="dst_host_srv_rerror_rate" required>
+                </div>
+                <!-- Submit Button -->
+                <div class="form-group">
+                    <button type="submit">Predict</button>
+                </div>
+            </form>
+            {% if predicted_attack %}
+                <div class="result">
+                    <h2>Predicted Attack Type: {{ predicted_attack }}</h2>
+                </div>
+            {% endif %}
+        </main>
+        <footer>
+            <p>&copy; 2024 Attack Type Prediction. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
