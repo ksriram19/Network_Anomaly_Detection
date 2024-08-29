@@ -1,5 +1,5 @@
 
-# Project: Log Visualization and Anomaly Detection
+# Log Visualization and Anomaly Detection
 
 ![Jupyter Notebook](https://img.shields.io/badge/Jupyter%20Notebook-Project-blue.svg)
 ![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)
@@ -9,8 +9,8 @@
 ![PyTorch](https://img.shields.io/badge/PyTorch-1.9.0-red.svg)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-0.24.2-green.svg)
 ![Anomaly Detection](https://img.shields.io/badge/Anomaly%20Detection-Enabled-brightgreen.svg)
-![Attack Finding](https://img.shields.io/badge/Attack%20Finding-Active-red.svg)
-
+![Attack Detection](https://img.shields.io/badge/Attack%20Finding-Active-red.svg)
+[![KDD Cup 1999 Dataset](https://img.shields.io/badge/KDD%20Cup%201999-Dataset-yellow)](http://kdd.ics.uci.edu/databases/kddcup99/)
 
 ## Overview
 This project focuses on visualizing network traffic data and detecting anomalies, which can indicate potential cyber-attacks. The repository includes Jupyter notebooks and model files for conducting these tasks.
@@ -52,6 +52,23 @@ This project focuses on visualizing network traffic data and detecting anomalies
     model.eval()
     ```
     - This model can be used in conjunction with the `AnomalyPredictor.ipynb` to classify network traffic data.
+ 
+## Getting the KDD Dataset
+The KDD Cup 1999 dataset is commonly used for network intrusion detection tasks. Here are the steps to obtain and prepare the dataset:
+
+### Download the Dataset
+Visit the UCI Machine Learning Repository and download the kddcup.data.gz file.
+
+### Prepare the Dataset
+#### Extract the Data:
+Extract the contents of kddcup.data.gz to obtain the kddcup.data file.
+
+#### Add Labels:
+The dataset includes labels for different types of attacks. You can find the label information in the kddcup.names file or directly from the dataset description.
+To use the dataset effectively, you might want to add labels to your data.
+
+#### Data Preprocessing:
+Depending on your model's requirements, you might need to preprocess the dataset. This can include handling missing values, encoding categorical features, and normalizing numerical features.
 
 ## Setting Up the Environment
 
